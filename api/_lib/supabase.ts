@@ -24,9 +24,12 @@ export async function supabaseRest(path: string, options: RestOptions = {}) {
     },
   });
   if (!response.ok) {
-    const error = new Error('DATABASE_REQUEST_FAILED');
-    (error as Error & { status?: number }).status = 502;
-    throw error;
-  }
-  return response;
+  const text = await response.text();
+
+  console.error('SUPABASE ERROR:', text);
+
+  const error = new Error(text);
+  (error as Error & { status?: number }).status = response.status;
+
+  throw error;
 }
