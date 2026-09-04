@@ -33,3 +33,5 @@ export async function supabaseRest(path: string, options: RestOptions = {}) {
 
   throw error;
 }
+   return response;
+}
