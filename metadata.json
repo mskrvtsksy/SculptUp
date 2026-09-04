@@ -1,0 +1,6 @@
+{
+  "name": "SCULPT - Looksmaxxing Dating Protocol",
+  "description": "Telegram Mini App combining cyber OKX aesthetic, swipe dating, looksmaxxing facial audit, GPS radar, and Telegram Stars monetization.",
+  "requestFramePermissions": ["geolocation", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
