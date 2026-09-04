@@ -1,5 +1,5 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { validateInitData, type TelegramUser } from '../telegram/session';
+import { validateInitData, type TelegramUser } from '../telegram/session.js';
 
 export function json(res: ServerResponse, status: number, body: unknown) {
   res.statusCode = status;
