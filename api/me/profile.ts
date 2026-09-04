@@ -76,7 +76,10 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
     res.setHeader('Allow', 'GET, PUT');
     return json(res, 405, { error: 'METHOD_NOT_ALLOWED' });
   } catch (error) {
-    const status = (error as Error & { status?: number }).status ?? 500;
-    return json(res, status, { error: (error as Error).message === 'DATABASE_NOT_CONFIGURED' ? 'DATABASE_NOT_CONFIGURED' : 'REQUEST_FAILED' });
-  }
+  console.error(error);
+
+  return json(res, 500, {
+    error: String((error as Error).message),
+  });
+}
 }
