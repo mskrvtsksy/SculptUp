@@ -1,6 +1,6 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { json, readJson, telegramUser } from '../_lib/request';
-import { supabaseRest } from '../_lib/supabase';
+import { json, readJson, telegramUser } from '../_lib/request.js';
+import { supabaseRest } from '../_lib/supabase.js';
 
 type ProfileInput = {
   displayName?: unknown;
